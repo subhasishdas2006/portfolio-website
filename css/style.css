@@ -1,0 +1,104 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:#f8fafc;
+    line-height:1.6;
+}
+
+/* Header */
+header{
+    background:#020617;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+}
+
+nav a:hover{
+    color:#38bdf8;
+}
+
+/* Sections */
+section, aside{
+    width:85%;
+    margin:20px auto;
+    background:#1e293b;
+    padding:20px;
+    border-radius:10px;
+}
+
+/* Hero */
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:40px;
+}
+
+.hero img{
+    width:200px;
+    border-radius:50%;
+}
+
+/* Skills */
+.skills-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.skills-list li{
+    background:#2563eb;
+    padding:8px 12px;
+    border-radius:20px;
+}
+
+/* Form */
+form{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    max-width:600px;
+}
+
+input, textarea{
+    padding:10px;
+    border:none;
+    border-radius:5px;
+}
+
+/* Button */
+button{
+    background:#2563eb;
+    color:white;
+    padding:10px;
+    border:none;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#1d4ed8;
+}
+
+/* Footer */
+footer{
+    text-align:center;
+    padding:20px;
+}
