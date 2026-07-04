@@ -1,19 +1,14 @@
-document.addEventListener("DOMContentLoaded", function () {
+const themeBtn = document.getElementById("themeBtn");
 
-    const form = document.getElementById("contactForm");
+themeBtn.addEventListener("click", function () {
 
-    if (form) {
+    document.body.classList.toggle("dark");
 
-        form.addEventListener("submit", function (e) {
-
-            e.preventDefault();
-
-            alert("Message sent successfully!");
-
-            form.reset();
-
-        });
-
+    if(document.body.classList.contains("dark")){
+        themeBtn.innerHTML = "☀";
+    }
+    else{
+        themeBtn.innerHTML = "🌙";
     }
 
 });

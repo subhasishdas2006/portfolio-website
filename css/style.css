@@ -1,27 +1,70 @@
+/* CSS Variables */
+:root{
+    --bg:#f5f5f5;
+    --text:#222;
+    --primary:#0077b6;
+    --card:#ffffff;
+}
+
+.dark{
+    --bg:#121212;
+    --text:#ffffff;
+    --primary:#00b4d8;
+    --card:#1f1f1f;
+}
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    background:#0f172a;
-    color:#f8fafc;
-    line-height:1.6;
+    background:var(--bg);
+    color:var(--text);
+    font-family:Arial,sans-serif;
 }
 
-/* Header */
+/* ================= GRID ================= */
+
+.container{
+    display:grid;
+
+    grid-template-areas:
+    "header header"
+    "sidebar main"
+    "footer footer";
+
+    grid-template-columns:250px 1fr;
+
+    min-height:100vh;
+}
+
+/* ================= HEADER ================= */
+
 header{
-    background:#020617;
-    padding:20px;
+    grid-area:header;
+
+    background:var(--primary);
+
+    color:white;
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
+
+    padding:20px;
 }
 
-nav ul{
-    list-style:none;
+/* ================= NAVIGATION ================= */
+
+nav{
     display:flex;
     gap:20px;
 }
@@ -29,76 +72,181 @@ nav ul{
 nav a{
     color:white;
     text-decoration:none;
+    font-weight:bold;
 }
 
 nav a:hover{
-    color:#38bdf8;
+    text-decoration:underline;
 }
 
-/* Sections */
-section, aside{
-    width:85%;
-    margin:20px auto;
-    background:#1e293b;
-    padding:20px;
-    border-radius:10px;
-}
+/* ================= BUTTON ================= */
 
-/* Hero */
-.hero{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:40px;
-}
-
-.hero img{
-    width:200px;
-    border-radius:50%;
-}
-
-/* Skills */
-.skills-list{
-    display:flex;
-    flex-wrap:wrap;
-    gap:10px;
-}
-
-.skills-list li{
-    background:#2563eb;
-    padding:8px 12px;
-    border-radius:20px;
-}
-
-/* Form */
-form{
-    display:flex;
-    flex-direction:column;
-    gap:10px;
-    max-width:600px;
-}
-
-input, textarea{
-    padding:10px;
+#themeBtn{
+    padding:10px 15px;
     border:none;
+    background:white;
+    cursor:pointer;
     border-radius:5px;
 }
 
-/* Button */
-button{
-    background:#2563eb;
-    color:white;
-    padding:10px;
-    border:none;
-    cursor:pointer;
-}
+/* ================= SIDEBAR ================= */
 
-button:hover{
-    background:#1d4ed8;
-}
+aside{
+    grid-area:sidebar;
 
-/* Footer */
-footer{
-    text-align:center;
+    background:var(--card);
+
     padding:20px;
+
+    text-align:center;
+}
+
+aside img{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    margin-bottom:15px;
+}
+
+/* ================= MAIN ================= */
+
+main{
+    grid-area:main;
+    padding:30px;
+}
+
+section{
+    margin-bottom:40px;
+}
+
+/* ================= PROJECTS ================= */
+
+.project-container{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+}
+
+.card{
+
+    flex:1 1 250px;
+
+    background:var(--card);
+
+    padding:20px;
+
+    border-radius:10px;
+
+    box-shadow:0 0 10px gray;
+
+    transition:.3s;
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+}
+
+/* ================= SKILLS ================= */
+
+ul{
+    margin-left:20px;
+}
+
+/* ================= FORM ================= */
+
+form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+}
+
+input,
+textarea{
+
+    padding:10px;
+
+    border:1px solid gray;
+
+    border-radius:5px;
+}
+
+form button{
+
+    background:var(--primary);
+
+    color:white;
+
+    border:none;
+
+    padding:12px;
+
+    cursor:pointer;
+
+    border-radius:5px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+
+    grid-area:footer;
+
+    background:var(--primary);
+
+    color:white;
+
+    text-align:center;
+
+    padding:20px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+.container{
+
+grid-template-areas:
+
+"header"
+
+"sidebar"
+
+"main"
+
+"footer";
+
+grid-template-columns:1fr;
+
+}
+
+header{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+nav{
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.project-container{
+
+flex-direction:column;
+
+}
+
 }
